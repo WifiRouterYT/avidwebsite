@@ -47,9 +47,13 @@
     font-size: 28px;
     font-weight: bold;
     text-decoration: none;
-}
-
-.title p {
     margin-top: 4px;
     margin-left: 6px;
+}
+
+.content {
+    background-color: #FFF;
+    width: 100%;
+    height: calc(100% - 48px);
+    margin-top: 48px;
 }
