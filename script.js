@@ -39,10 +39,12 @@ async function scaleupanim(object) {
 
 async function gimmenav() {
     while(true) {
-        if(s.display = "none") {
+        if(s.display === "none") {
             navbar.style.top = 0;
+            console.log("found!")
             break;
         }
+        console.log('waiting...')
         await sleep(100);
     }
 }
