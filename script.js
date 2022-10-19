@@ -29,12 +29,14 @@ function sleep(ms) {
 }
 
 async function slideinNavBar() {
+    var increment = 1;
     var d = -48;
     for (var i = 0; i < 48; i++) {
         d++;
+        increment += 0.25;
         navbar.style.marginTop = d;
         console.log("Top margin of nav: " + d);
-        await sleep(5);
+        await sleep(increment);
     }
 }
 
@@ -54,6 +56,9 @@ async function overlayFade() {
 async function scaleupanim(object) {
     c = 32;
     for (var i = 0; i < 100; i++) {
+        if (s.display == "none") {
+            break;
+        }
         c = c + 0.5;
         object.style.fontSize = c;
         object.style.letterSpacing = c-32;
