@@ -30,11 +30,11 @@ function sleep(ms) {
 
 async function slideinNavBar() {
     var d = -48;
-    for (var i = 0; 1 < 48; i++) {
+    for (var i = 0; i < 48; i++) {
         d++;
         navbar.style.marginTop = d;
         console.log("Top margin of nav: " + d);
-        await sleep(50);
+        await sleep(5);
     }
 }
 
