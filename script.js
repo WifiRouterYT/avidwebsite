@@ -20,7 +20,6 @@ async function entersite() {
     s.opacity = 1;
     await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,50)})();
     await scaleupanim(entertxt);
-    await gimmenav();
 }
 
 function sleep(ms) {
@@ -34,17 +33,5 @@ async function scaleupanim(object) {
         object.style.fontSize = c;
         object.style.letterSpacing = c-32;
         await sleep(50);
-    }
-}
-
-async function gimmenav() {
-    while(true) {
-        if(s.display === "none") {
-            navbar.style.top = 0;
-            console.log("found!")
-            break;
-        }
-        console.log('waiting...')
-        await sleep(100);
     }
 }
