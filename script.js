@@ -1,7 +1,7 @@
 // All code is created by WifiRouter
 // Tested on Chrome
 
-var s = null; var entertxt = null; var enterbtn = null; var navbar = null;
+var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', function() {
     // register elements after site has fully loaded to prevent null errors
@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
     enterbtn = document.getElementById('enterbtn');
     navbar = document.getElementById('nav');
     s = document.getElementById('overlay').style;
+    content = document.getElementById('content');
     // get rid of text until user clicks button
     entertxt.style.display = "none";
 });
@@ -19,25 +20,20 @@ async function entersite() {
     
     s.opacity = 1;
     //await overlayFade();
-    await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,40)})();
+    await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
     await scaleupanim(entertxt);
-    await slideinNavBar();
+    await sleep(500);
+    await showmethecontent();
 }
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function slideinNavBar() {
-    var increment = 1;
-    var d = -48;
-    for (var i = 0; i < 48; i++) {
-        d++;
-        increment += 0.25;
-        navbar.style.marginTop = d;
-        console.log("Top margin of nav: " + d);
-        await sleep(increment);
-    }
+async function showmethecontent() {
+    navbar.style.transform = "scaleY(1)";
+    await sleep(50);
+    content.style.transform = "scaleY(1)";
 }
 
 async function overlayFade() {
