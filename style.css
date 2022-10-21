@@ -44,7 +44,7 @@
 
 .nav {
     position: fixed;
-    background-color: rgb(22, 27, 34);
+    background-color: rgb(13, 17, 23);
     width: calc(100% - 15px);
     height: 42px;
     transform-origin: left top;
@@ -53,6 +53,8 @@
     border-radius: 15px;
     margin: 8px 8px 8px 8px;
     transition: all .3.5s ease-in-out;
+    border: 3px solid;
+    border-color: rgb(22, 27, 34);
 }
 
 .nav * {
