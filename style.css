@@ -150,8 +150,10 @@
 }
 
 
-.container {
+.container-title {
     display: block;
+    position: absolute;
+    z-index: -999;
     background-color: rgb(13, 17, 23);
     border: 3px solid;
     border-color: rgb(22, 27, 34);
