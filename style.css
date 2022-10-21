@@ -128,4 +128,39 @@
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+.vertical-center {
+    height: calc(100% - 58px);
   
+    display: flex;
+    align-items: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.exo {
+    font-family: 'Exo', sans-serif;
+}
+.exo * {
+    font-family: 'Exo', sans-serif;
+    font-weight: normal;
+}
+
+.container {
+    display: block;
+    background-color: rgb(13, 17, 23);
+    border: 3px solid;
+    border-color: rgb(22, 27, 34);
+    border-radius: 12px;
+    margin: auto;
+    max-width: 750px;
+    font-family: fixedsys;
+    text-align: center;
+    line-height: 30px;
+}
+
+.container * {
+    margin-right: 8px;
+}
