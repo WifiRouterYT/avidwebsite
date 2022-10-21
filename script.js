@@ -26,7 +26,8 @@ window.addEventListener('load', async function() {
     }
     const url = this.window.location.pathname.split("/");
     if (!url.includes('information')) {
-        link1.addEventListener('click', function() {
+        link1.addEventListener('click', async function() {
+            await hidecontent();
             window.location.href = "./information/";
         });
     }
@@ -48,6 +49,19 @@ async function entersite() {
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function hidecontent() {
+    navbar.style.transform = "scaleY(0)";
+    await sleep(50);
+    content.style.transform = "scaleY(0)";
+    await sleep(250);
+    link1.style.transform = "scaleY(0)";
+    await sleep(50);
+    link2.style.transform = "scaleY(0)";
+    await sleep(50);
+    link3.style.transform = "scaleY(0)";
+    await sleep(500);
 }
 
 async function showmethecontent() {
