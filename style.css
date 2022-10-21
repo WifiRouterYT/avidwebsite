@@ -95,15 +95,17 @@
     margin-left: 12px;
 }
 
-.content {
+.content-home {
     width: 100%;
     height: calc(100% - 58px);
     margin-top: 52px;
     transform: scaleY(0);
     transition: all 0.5s ease-in-out;
+    position: absolute;
+    z-index: -999;
 }
 
-.content * {
+.content-home * {
     margin-left: 6px;
 }
 
@@ -152,8 +154,6 @@
 
 .container-title {
     display: block;
-    position: absolute;
-    z-index: -999;
     background-color: rgb(13, 17, 23);
     border: 3px solid;
     border-color: rgb(22, 27, 34);
