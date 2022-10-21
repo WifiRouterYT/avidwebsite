@@ -1,7 +1,6 @@
 // All code is created by WifiRouter
 // Tested on Chrome
-
-var gborder = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
+var body = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', async function() {
     // register elements after site has fully loaded to prevent null errors
@@ -14,6 +13,7 @@ window.addEventListener('load', async function() {
     link2 = document.getElementById('link2');
     link3 = document.getElementById('link3');
     link4 = document.getElementById('link4');
+    body = document.getElementById('body');
     // get rid of text until user clicks button
     entertxt.style.display = "none";
     //entersite();
@@ -26,6 +26,7 @@ async function entersite() {
     s.opacity = 1;
     await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
     await scaleupanim(entertxt);
+    body.style.height = "auto";
     await sleep(250);
     await showmethecontent();
 }
