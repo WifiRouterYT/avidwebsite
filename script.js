@@ -16,7 +16,7 @@ window.addEventListener('load', async function() {
     link4 = document.getElementById('link4');
     // get rid of text until user clicks button
     entertxt.style.display = "none";
-    entersite();
+    //entersite();
 });
 
 async function entersite() {
@@ -24,9 +24,9 @@ async function entersite() {
     entertxt.style.display = "block";
     
     s.opacity = 1;
-    //await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
-    //await scaleupanim(entertxt);
-    //await sleep(500);
+    await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
+    await scaleupanim(entertxt);
+    await sleep(250);
     await showmethecontent();
 }
 
@@ -67,7 +67,7 @@ async function scaleupanim(object) {
         if (s.display == "none") {
             break;
         }
-        c = c + 0.5;
+        c = c + 1;
         object.style.fontSize = c;
         object.style.letterSpacing = c-32;
         await sleep(25);
