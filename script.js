@@ -1,7 +1,7 @@
 // All code is created by WifiRouter
 // Tested on Chrome
 
-var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
+var gborder = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', async function() {
     // register elements after site has fully loaded to prevent null errors

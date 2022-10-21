@@ -151,16 +151,37 @@
 .container {
     display: block;
     background-color: rgb(13, 17, 23);
-    border: 3px solid;
-    border-color: rgb(22, 27, 34);
     border-radius: 12px;
     margin: auto;
+    border: 3px solid;
+    border-color: rgb(22, 27, 34);
     max-width: 750px;
     font-family: fixedsys;
     text-align: center;
     line-height: 30px;
+    margin-right: 6px;
 }
 
 .container * {
     margin-right: 8px;
+}
+
+.gradient-background  {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+    position: absolute;
+    z-index: 999;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
