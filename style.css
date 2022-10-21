@@ -84,9 +84,14 @@
     transform: scaleY(0);
 }
 
-.navlinks p:hover {
+.link:hover {
     color:rgb(0, 204, 255);
     cursor: pointer;
+}
+
+.selectedlink {
+    cursor: default;
+    color: rgb(0, 113, 148);
 }
 
 .navlinks img:hover {

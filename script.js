@@ -1,13 +1,18 @@
 // All code is created by WifiRouter
 // Tested on Chrome
-var body = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
+var nooverlay = 0; var body = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', async function() {
     // register elements after site has fully loaded to prevent null errors
     entertxt = document.getElementById('entertxt');
     enterbtn = document.getElementById('enterbtn');
     navbar = document.getElementById('nav');
-    s = document.getElementById('overlay').style;
+    try {
+        s = document.getElementById('overlay').style;
+        entertxt.style.display = "none";
+    } catch(error) {
+        nooverlay = 1;
+    }
     content = document.getElementById('content');
     link1 = document.getElementById('link1');
     link2 = document.getElementById('link2');
@@ -15,19 +20,29 @@ window.addEventListener('load', async function() {
     link4 = document.getElementById('link4');
     body = document.getElementById('body');
     // get rid of text until user clicks button
-    entertxt.style.display = "none";
-    //entersite();
+    console.log(nooverlay);
+    if (nooverlay === 1) {
+        entersite();
+    }
+    const url = this.window.location.pathname.split("/");
+    if (!url.includes('information')) {
+        link1.addEventListener('click', function() {
+            window.location.href = "./information/";
+        });
+    }
 });
 
 async function entersite() {
-    enterbtn.style.display = "none";
-    entertxt.style.display = "block";
+    if(nooverlay === 0) {
+        enterbtn.style.display = "none";
+        entertxt.style.display = "block";
+        s.opacity = 1;
+        await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
+        await scaleupanim(entertxt);
+        body.style.height = "auto";
+        await sleep(250);
+    }
     
-    s.opacity = 1;
-    await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
-    await scaleupanim(entertxt);
-    body.style.height = "auto";
-    await sleep(250);
     await showmethecontent();
 }
 
@@ -45,8 +60,6 @@ async function showmethecontent() {
     link2.style.transform = "scaleY(1)";
     await sleep(50);
     link3.style.transform = "scaleY(1)";
-    await sleep(50);
-    link4.style.transform = "scaleY(1)";
 }
 
 async function overlayFade() {
