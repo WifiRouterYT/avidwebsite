@@ -3,7 +3,7 @@
 
 var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
-window.addEventListener('load', function() {
+window.addEventListener('load', async function() {
     // register elements after site has fully loaded to prevent null errors
     entertxt = document.getElementById('entertxt');
     enterbtn = document.getElementById('enterbtn');
@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
     content = document.getElementById('content');
     // get rid of text until user clicks button
     entertxt.style.display = "none";
+    entersite();
 });
 
 async function entersite() {
@@ -20,9 +21,9 @@ async function entersite() {
     
     s.opacity = 1;
     //await overlayFade();
-    await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
-    await scaleupanim(entertxt);
-    await sleep(500);
+    //await (function fade(){(s.opacity-=.05)<0?s.display="none":setTimeout(fade,60)})();
+    //await scaleupanim(entertxt);
+    //await sleep(500);
     await showmethecontent();
 }
 
