@@ -22,6 +22,7 @@ window.addEventListener('load', async function() {
     // get rid of text until user clicks button
     console.log(nooverlay);
     if (nooverlay === 1) {
+        await sleep(500);
         entersite();
     }
     const url = this.window.location.pathname.split("/");
