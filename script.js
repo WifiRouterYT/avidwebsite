@@ -3,6 +3,20 @@
 var nooverlay = 0; var body = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', async function() {
+    var isChromium = !!window.chrome;
+    if (!isChromium) {
+        window.alert('Unsupported browser :(\nPlease use a Chromium-based browser, such as Google Chrome or Opera.');
+        const url = this.window.location.pathname.split("/");
+        if(url.length == 1 && url.contains('avidwebsite')) {
+            window.location.replace('unsupportedbrowser/')
+        } else {
+            window.location.replace('../unsupportedbrowser/')
+        }
+        if (url.length == 0) {
+            window.location.replace('unsupportedbrowser/')
+        }
+        return;
+    }
     // register elements after site has fully loaded to prevent null errors
     entertxt = document.getElementById('entertxt');
     enterbtn = document.getElementById('enterbtn');

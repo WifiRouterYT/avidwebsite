@@ -13,7 +13,6 @@
 
 .body {
     background-color: rgb(1, 4, 9);
-    height: 100%;
 }
 
 .overlay {
@@ -171,7 +170,8 @@
     border-color: rgb(22, 27, 34);
     border-radius: 12px;
     margin: auto;
-    max-width: 750px;
+    max-width: 75%;
+    overflow-wrap: break-word;
     font-family: fixedsys;
     text-align: center;
     line-height: 30px;
