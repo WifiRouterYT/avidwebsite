@@ -7,14 +7,7 @@ window.addEventListener('load', async function() {
     if (!isChromium) {
         window.alert('Unsupported browser :(\nPlease use a Chromium-based browser, such as Google Chrome or Opera.');
         const url = this.window.location.pathname.split("/");
-        if(url.length == 1 && url.contains('avidwebsite')) {
-            window.location.replace('unsupportedbrowser/')
-        } else {
-            window.location.replace('../unsupportedbrowser/')
-        }
-        if (url.length == 0) {
-            window.location.replace('unsupportedbrowser/')
-        }
+        this.window.location.replace('/avidwebsite/unsupportedbrowser')
         return;
     }
     // register elements after site has fully loaded to prevent null errors
