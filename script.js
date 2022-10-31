@@ -44,6 +44,12 @@ window.addEventListener('load', async function() {
             window.location.href = "/avidwebsite/costs/";
         });
     }
+    if (!url.includes('miscellaneous')) {
+        link3.addEventListener('click', async function() {
+            await hidecontent();
+            window.location.href = "/avidwebsite/miscellaneous/";
+        });
+    }
 });
 
 async function entersite() {
@@ -74,7 +80,7 @@ async function hidecontent() {
     link2.style.transform = "scaleY(0)";
     await sleep(50);
     link3.style.transform = "scaleY(0)";
-    await sleep(500);
+    await sleep(750);
 }
 
 async function showmethecontent() {

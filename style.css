@@ -68,6 +68,15 @@
     display: inline-block;
 }
 
+.navlinks img:hover {
+    transform: scale(1.2);
+}
+
+.navlinks img {
+    background-color: #FFF;
+}
+
+
 .navlinks {
     position: fixed;
     right: 0;
@@ -95,10 +104,6 @@
 .selectedlink {
     cursor: default;
     color: rgb(0, 113, 148);
-}
-
-.navlinks img:hover {
-    transform: scale(1.2);
 }
 
 .title {
