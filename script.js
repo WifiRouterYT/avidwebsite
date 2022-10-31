@@ -24,7 +24,6 @@ window.addEventListener('load', async function() {
     link1 = document.getElementById('link1');
     link2 = document.getElementById('link2');
     link3 = document.getElementById('link3');
-    link4 = document.getElementById('link4');
     body = document.getElementById('body');
     // get rid of text until user clicks button
     console.log(nooverlay);
@@ -36,7 +35,13 @@ window.addEventListener('load', async function() {
     if (!url.includes('information')) {
         link1.addEventListener('click', async function() {
             await hidecontent();
-            window.location.href = "./information/";
+            window.location.href = "/avidwebsite/information/";
+        });
+    }
+    if (!url.includes('costs')) {
+        link2.addEventListener('click', async function() {
+            await hidecontent();
+            window.location.href = "/avidwebsite/costs/";
         });
     }
 });
