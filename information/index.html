@@ -16,12 +16,53 @@
         </div>
         <div class="content-home" id="content">
             <div class="vertical-center exo">
-                <div class="container-title">
+                <div class="container-title" style="width: 50%">
                     <div class="center-text">
-                        <h1 style="font-weight: semi-bold; margin-top: 8px; font-family: fixedsys; font-size: 30px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h1>
+                        <h1 style="font-weight: semi-bold; margin-bottom: 8px; margin-top: 8px; font-family: fixedsys; font-size: 30px; text-decoration: underline;">Basic Information</h1>
+                        <h3 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Enrollment Demographics:</h3>
+                        <center><div class="egmf" id="mfbar">
+                            <p class="malepercentage" id="mtext">Male: 44%</p>
+                            <div class="egmffemale" id="fbar">
+                                <p class="femalepercentage" id="ftext">Female: 56%</p>
+                            </div>
+                        </div></center>
+                        <img src="../img/enrollment-demographics-pie-chart.png" style="width: 65%"></img>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Mascot:</h2>
+                        <p>Herky the Hornet</p>
+                        <img src="https://assets.change.org/photos/2/vl/qo/OSvlQoHvalwRZrm-800x450-noPad.jpg?1542240750" style="width: 30%"></img>
+                        <br><a href="https://www.change.org/p/herky-the-hornet-we-want-you-to-fix-the-smoke" style="font-size: 13px;">Source</a>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Total Number of Students:</h2>
+                        <p style="font-size: 14px;">30,661 as of 2017</p>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Minimum GPA required:</h2>
+                        <p style="font-size: 14px;">A minimum GPA of 3.0 is required to be admitted.</p>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Total offered majors:</h2>
+                        <p style="font-size: 14px;">A total of 48 majors are offered here.</p>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Highest degree offered:</h2>
+                        <p style="font-size: 14px;">The highest degree offereed here is a Master's Degree</p>
+                        <h2 style="margin-top: 8px; font-family: fixedsys; font-weight: semi-bold;">Majors I am interested in:</h2>
+                        <div class="reduced-line-height">
+                            <p style="font-size: 14px;"><u>Computer Engineering</u>▪ Develop computer systems and other tech.</p>
+                            <p style="font-size: 14px;"><u>Computer Science</u>▪ Program computer systems and other tech.</p>
+                            <p style="font-size: 14px; margin-bottom: 8px;"><u>English</u>▪ Focuses on the English language, including it's history and structure.</p>
+                        </div>    
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            async function baranim() {
+                await sleep(100);
+                document.getElementById('mfbar').style.width = "50%";
+                await sleep(500);
+                document.getElementById('fbar').style.width = "56%";
+                await sleep(800);
+                document.getElementById('ftext').style.opacity = 1;
+                document.getElementById('mtext').style.opacity = 1;
+            }
+            baranim();
+        </script>
     </body>
 </html>
