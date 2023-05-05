@@ -1,7 +1,7 @@
-window.location = "/error?code=403"
-
 // All code is created by WifiRouter
 // Tested on Chrome
+// yes its nasty but it works so good enough :)
+
 var nooverlay = 0; var body = null; var link1 = null; var link2 = null; var link3 = null; var link4 = null; var s = null; var entertxt = null; var enterbtn = null; var navbar = null; var content = null;
 
 window.addEventListener('load', async function() {
